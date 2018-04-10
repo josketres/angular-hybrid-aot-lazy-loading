@@ -1,7 +1,8 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "project": {
-    "name": "ng-hybrid-aot"
+    "name": "ng-hybrid-aot",
+    "ejected": false
   },
   "apps": [
     {
@@ -59,9 +60,9 @@
       "spec": false
     },
     "component": {
+      "spec": false,
       "inlineStyle": true,
-      "inlineTemplate": true,
-      "spec": false
+      "inlineTemplate": true
     },
     "directive": {
       "spec": false
