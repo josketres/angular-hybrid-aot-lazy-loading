@@ -1,9 +1,9 @@
 export const ng1App: any = angular.module('ng1App', []);
 
-ng1App.component('home', {
-    template: '<h1>{{$ctrl.message}}</h1>',
+ng1App.component('header', {
+    template: '<div style="border: 3px solid red;padding: 3px;">{{$ctrl.message}}</div>',
     controller: function () {
-        this.message = 'Hello from angular 1';
+        this.message = 'Angular 1 header';
     }
 });
 
