@@ -7,119 +7,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="https://code.angularjs.org/1.5.5/angular.js"></script>
     <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" type="text/css" href="assets/main.css">
     <style>
         .main-loader-overlay {
             position: absolute;
             width: 100%;
             height: 100%;
-            background: white;
+            background: #f2f2f2;
             top: 0;
             left: 0;
         }
 
-        .main-loader {
-            top: calc(50% - 20px);
-            left: calc(50% - 20px);
+        @keyframes header-placeholder {
+            0%{background-position:-400px 0}
+            50%{background-position:400px 0}
+            100%{background-position:-400px 0}
+        }
+
+        .placeholder-header {
             position: absolute;
-            background: #900;
+            top: 0;
+            left: 0;
+            height: 90px;
+            width: 100%;
+            animation: header-placeholder 2s ease-in-out infinite;
+            background: linear-gradient(90deg, #900 8%, #a22626 16%, #900 33%);
+            background-size: 400% 400%;
         }
 
-        #loader {
-            animation: loader 7s cubic-bezier(.8, 0, .2, 1) infinite;
-            height: 40px;
-            width: 41px;
+        .placeholder-body {
             position: absolute;
+            top: 100px;
+            left: 10px;
+            height: calc(100% - 100px);
+            width: calc(100% - 20px);
+            background: #e1dfdd;
         }
 
-        @keyframes loader {
-            90% {
-                transform: rotate(0deg);
-            }
-            100% {
-                transform: rotate(180deg);
-            }
-        }
-
-        #top {
-            animation: top 7s linear infinite;
-            border-top: 20px solid #900;
-            border-right: 20px solid transparent;
-            border-left: 20px solid transparent;
-            height: 0;
-            width: 1px;
-            transform-origin: 50% 100%;
-        }
-
-        @keyframes top {
-            90% {
-                transform: scale(0);
-            }
-            100% {
-                transform: scale(0);
-            }
-        }
-
-        #bottom {
-            animation: bottom 7s linear infinite;
-            border-right: 20px solid transparent;
-            border-bottom: 20px solid #900;
-            border-left: 20px solid transparent;
-            height: 0;
-            width: 1px;
-            transform: scale(0);
-            transform-origin: 50% 100%;
-        }
-
-        @keyframes bottom {
-            10% {
-                transform: scale(0);
-            }
-            90% {
-                transform: scale(1);
-            }
-            100% {
-                transform: scale(1);
-            }
-        }
-
-        #line {
-            animation: line 7s linear infinite;
-            border-left: 1px dotted #900;
-            height: 0;
-            width: 0;
-            position: absolute;
-            top: 20px;
-            left: 20px;
-        }
-
-        @keyframes line {
-            10% {
-                height: 20px;
-            }
-            100% {
-                height: 20px;
-            }
-        }
-
-        .main-loader img {
-            position: relative;
-            left: -30px;
-            top: 55px;
-            width: 100px;
-        }
     </style>
 </head>
 <body>
 <header></header>
 <app-root>
     <div class="main-loader-overlay">
-        <div class="main-loader">
-            <div id="loader">
-                <div id="top"></div>
-                <div id="bottom"></div>
-                <div id="line"></div>
-            </div>
-        </div>
+        <div class="placeholder-header"></div>
+        <div class="placeholder-body"></div>
     </div>
 </app-root>
 </body>
